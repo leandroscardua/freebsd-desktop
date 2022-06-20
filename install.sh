@@ -4,7 +4,7 @@
 su
 
 echo "Install basic apps with pkg"
-pkg install -y vscode nano bash wget unzip curl nano terminator py38-pip htop
+pkg install -y ca_root_nss vscode nano bash wget unzip curl nano terminator py38-pip htop
 
 
 echo "Install packer"
