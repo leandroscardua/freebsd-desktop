@@ -1,3 +1,25 @@
+#! /bin/bash
+
+echo "Install bhyve management"
+
+pkg install -y vm-bhyve grub2-bhyve bhyve-firmware uefi-edk2-bhyve
+
+kldload vmm
+
+sysrc vm_enable="YES"
 
 
-pkg install -y vm-bhyve
+echo "Configure bhyve storage"
+
+zfs create zroot/vm
+sysrc vm_dir="zfs:zroot/vm"
+
+echo "Initilize basic configuration"
+
+vm init
+cp /usr/local/share/examples/vm-bhyve/* /mountpoint/for/pool/vm/.templates/
+
+echo "Configure bhyve network"
+
+vm switch create public
+vm switch add public bge0
