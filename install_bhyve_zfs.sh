@@ -22,4 +22,4 @@ cp /usr/local/share/examples/vm-bhyve/* /vm/.templates/
 echo "Configure bhyve network"
 
 vm switch create public
-vm switch add public bge0
+vm switch add public wlan0
