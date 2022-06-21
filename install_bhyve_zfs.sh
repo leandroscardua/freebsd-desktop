@@ -8,10 +8,10 @@ kldload vmm
 
 sysrc vm_enable="YES"
 
-
 echo "Configure bhyve storage"
 
 zfs create zroot/vm
+zfs set mountpoint=/vm zroot/vm
 sysrc vm_dir="zfs:zroot/vm"
 
 echo "Initilize basic configuration"
