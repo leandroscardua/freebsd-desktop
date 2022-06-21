@@ -17,7 +17,7 @@ sysrc vm_dir="zfs:zroot/vm"
 echo "Initilize basic configuration"
 
 vm init
-cp /usr/local/share/examples/vm-bhyve/* /mountpoint/for/pool/vm/.templates/
+cp /usr/local/share/examples/vm-bhyve/* /vm/.templates/
 
 echo "Configure bhyve network"
 
