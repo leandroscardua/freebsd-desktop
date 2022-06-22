@@ -20,6 +20,10 @@ vm init
 cp /usr/local/share/examples/vm-bhyve/* /vm/.templates/
 
 echo "Configure bhyve network"
+echo "please check that information before proceed: https://github.com/churchers/vm-bhyve/wiki/NAT-Configuration"
 
-vm switch create public
-vm switch add public wlan0
+pause
+
+#sysctl net.inet.ip.forwarding=1
+#vm switch create -a 192.168.8.1/24 public 
+#vm switch address public 192.168.8.1/24 
